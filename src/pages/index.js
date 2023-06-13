@@ -91,12 +91,12 @@ const PageHeading = () => {
           <Spacer />
           <Flex>
             <Box paddingRight={'30px'} color={'white'}>
-              <Link to={'#'}>
+              <Link href={'https://pay.fondy.eu/merchants/47cc944cb10cd2872ee4b444ddf6517b39759ba8/default/index.html?button=f3f9c938be5627925f49191fe4627f9b06234ba8'} target={"_blank"}>
                 Donate
               </Link>
             </Box>
             <Box>
-              <Link to={'#'}>
+              <Link href={'#'}>
                 Join camp
               </Link>
             </Box>
@@ -256,7 +256,7 @@ const IndexPage = () => (
                 join our camp
               </Button>
               <Box paddingTop={'90px'}>
-                <Button as={Link} colorScheme={'white'} style={{textDecoration: 'none'}} width={'100%'} href={'%'}>
+                <Button as={Link} colorScheme={'white'} style={{textDecoration: 'none'}} width={'100%'} href={'https://pay.fondy.eu/merchants/47cc944cb10cd2872ee4b444ddf6517b39759ba8/default/index.html?button=f3f9c938be5627925f49191fe4627f9b06234ba8'} target={'_blank'}>
                   donate
                 </Button>
               </Box>
