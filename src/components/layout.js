@@ -27,6 +27,7 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <Box
+        fontFamily={'Neue Montreal'}
         marginLeft={'60px'}
         marginRight={'60px'}
         paddingTop={'30px'}

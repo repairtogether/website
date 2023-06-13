@@ -1,13 +1,30 @@
+@font-face {
+  font-family: 'Neue Montreal';
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url(/fonts/NeueMontreal-Regular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Bold';
+  src: url(/fonts/NeueMontreal-Bold.otf) format("opentype");
+}
+
+
 :root {
   --border-radius: 4px;
   --color-text: white;
   --color-primary: #7026b9;
   --color-code-bg: #fff4db;
   --color-code: #8a6534;
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+  --font-sans: "Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
   --font-lg: 18px;
   --font-md: 16px;
   --font-sm: 14px;
@@ -84,14 +101,6 @@ h1 > b {
 img {
   border-style: none;
   max-width: 100%;
-}
-code,
-kbd,
-pre,
-samp {
-  font-family: var(--font-mono);
-  font-size: 1em;
-  line-height: inherit;
 }
 hr {
   box-sizing: content-box;
@@ -185,15 +194,6 @@ p *:last-child {
 li > p {
   margin-bottom: calc(var(--space-4) / 2);
 }
-code {
-  font-size: 0.875rem;
-}
-kbd {
-  font-size: 0.875rem;
-}
-samp {
-  font-size: 0.875rem;
-}
 abbr {
   border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
   cursor: help;
@@ -201,30 +201,4 @@ abbr {
 acronym {
   border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
   cursor: help;
-}
-tt,
-code {
-  background-color: var(--color-code-bg);
-  border-radius: var(--border-radius);
-  color: var(--color-code);
-  font-family: var(--font-mono);
-  padding-bottom: 0.25em;
-  padding-top: 0.25em;
-  word-break: normal;
-}
-pre code {
-  background: none;
-}
-code:before,
-code:after,
-tt:before,
-tt:after {
-  content: "\00a0";
-  letter-spacing: -0.2em;
-}
-pre code:before,
-pre code:after,
-pre tt:before,
-pre tt:after {
-  content: none;
 }

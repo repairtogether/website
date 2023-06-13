@@ -16,6 +16,10 @@ import {
 import { extendTheme } from "@chakra-ui/react"
 
 const theme = extendTheme({
+  fonts: {
+    heading: `'Neue Montreal'`,
+    body: `'Neue Montreal'`,
+  },
   config: {
     initialColorMode: 'dark',
     // useSystemColorMode: false,
