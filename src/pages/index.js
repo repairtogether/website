@@ -29,7 +29,7 @@ const PageHeading = () => {
         }}
       >
         <Flex
-          fontSize={['64px', '54px']}
+          fontSize={{base: '54px', '2xl': '64px'}}
           width={'100%'}
         >
           <Box
@@ -59,9 +59,7 @@ const PageHeading = () => {
 
 const Navigation = () => (
   <Flex
-    fontSize={['64px', '54px']}
-    // minWidth={'60%'}
-    // justify
+    fontSize={{base: '54px', '2xl': '64px'}}
   >
     <Box paddingRight={'60px'}>
       <Link href={'#main'}>
@@ -93,10 +91,10 @@ const IndexPage = () => (
 
     <Box
       paddingTop={'90px'}
-      fontSize={{base: '48px', lg: '64px'}}
+      fontSize={{base: '48px', '2xl': '64px'}}
     >
 
-      <Heading as='h1' fontSize={{base: '120px', lg: '140px'}}>
+      <Heading as='h1' fontSize={{base: '120px', '2xl': '140px'}}>
         Building Toloka Camp
       </Heading>
       <Navigation />
@@ -117,24 +115,24 @@ const IndexPage = () => (
       <Box as={'section'} id={'dates'} paddingBottom={'150px'}>
         <Box paddingBottom={'60px'}>
         <a href={'#dates'}>
-          <Heading as={'h2'} fontSize={{base: '120px', lg: '140px'}}>
+          <Heading as={'h2'} fontSize={{base: '120px', '2xl': '140px'}}>
             Dates
           </Heading>
         </a>
         </Box>
-        <Box fontSize={{base: '48px', lg: '140px'}} textAlign={'right'} fontWeight={'bold'}>
+        <Box fontSize={{base: '48px', '2xl': '140px'}} textAlign={'right'} fontWeight={'bold'}>
           10.07.2023 - 10.10.2023
         </Box>
       </Box>
       <Box as={'section'} id={'goals'} paddingBottom={'150px'}>
         <Box paddingBottom={'60px'}>
         <a href={'#goals'}>
-          <Heading as={'h2'} fontSize={{base: '120px', lg: '140px'}}>
+          <Heading as={'h2'} fontSize={{base: '120px', '2xl': '140px'}}>
             Goals
           </Heading>
         </a>
         </Box>
-      <Box fontSize={{base: '48px', lg: '64px'}}>
+      <Box fontSize={{base: '48px', '2xl': '64px'}}>
         <Grid as={'ol'}
               gap={'30px'}
               templateRows={['repeat(2, 1fr)', 'repeat(1, 1fr)']}
@@ -166,10 +164,10 @@ const IndexPage = () => (
       </Box>
       <Box as={'section'} id={'activities'} paddingBottom={'150px'}>
         <Flex flexWrap={'wrap'}>
-          <Box marginRight={'60px'} flexBasis={'50%'}>
+          <Box marginRight={'60px'} flexBasis={'50%'} flexGrow={'1'}>
             <Box paddingBottom={'60px'}>
             <a href={'#activities'}>
-              <Heading as={'h2'} fontSize={{base: '120px', lg: '140px'}}>
+              <Heading as={'h2'} fontSize={{base: '120px', '2xl': '140px'}}>
                 Activities
               </Heading>
             </a>
@@ -193,8 +191,8 @@ const IndexPage = () => (
               </li>
             </UnorderedList>
           </Box>
-          <Box flexBasis={'45%'}>
-            <Show above={'lg'}>
+          <Box flexBasis={'45%'} flexGrow={'1'}>
+            <Show above={'xl'}>
             <StaticImage
               src={'../images/activities.jpg'}
               alt={'A person working in building on a repair together event'}
