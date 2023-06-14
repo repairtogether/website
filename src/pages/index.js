@@ -1,73 +1,22 @@
 import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import { mode } from '@chakra-ui/theme-tools';
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import {
   Box, Button,
-  ChakraProvider, defineStyle, defineStyleConfig,
   Flex,
   Grid,
   Heading,
-  Link,
+  Link, Show,
   Spacer,
   UnorderedList, useColorModeValue
 } from '@chakra-ui/react'
-import { extendTheme } from "@chakra-ui/react"
-
-const theme = extendTheme({
-  fonts: {
-    heading: `'Neue Montreal'`,
-    body: `'Neue Montreal'`,
-  },
-  config: {
-    initialColorMode: 'dark',
-    // useSystemColorMode: false,
-  },
-  colors: {
-    // backgroundColor: '#0C0C0C'
-    // brand: {
-    //   100: "#f7fafc",
-    //   // ...
-    //   900: "#1a202c",
-    // },
-  },
-  styles: {
-    global: props => ({
-      body: {
-        bg: mode('white', '#0c0c0c')(props)
-      }
-    })
-  },
-  components: {
-    Button:  defineStyleConfig({
-      sizes: {
-        md: defineStyle({
-          fontSize: '76px',
-          fontWeight: 'normal',
-          borderRadius: '16px'
-        })
-
-
-      },
-      variants: {
-        solid: {
-          textTransform: 'uppercase',
-          bgColor: 'white',
-          height: '164px'
-        }
-      }
-    })
-  }
-})
-
-
 
 const PageHeading = () => {
   const bgColor=  useColorModeValue('white', '#0c0c0c')
 
   return (
-    <Box position={'sticky'} top={'0'} paddingTop={'0px'} bgColor={bgColor} paddingTop={'30px'} paddingBottom={'30px'} zIndex={'100'}>
+    <Box position={'sticky'} top={'0'} bgColor={bgColor} paddingTop={'30px'} paddingBottom={'30px'} zIndex={'100'}>
     <Box
       // position={'absolute'} top={'0'}
       width={'100%'}
@@ -80,7 +29,7 @@ const PageHeading = () => {
         }}
       >
         <Flex
-          fontSize='64px'
+          fontSize={['64px', '54px']}
           width={'100%'}
         >
           <Box
@@ -89,8 +38,8 @@ const PageHeading = () => {
             repair.together
           </Box>
           <Spacer />
-          <Flex>
-            <Box paddingRight={'30px'} color={'white'}>
+          <Flex flexWrap={'wrap'} paddingLeft={'20px'}>
+            <Box paddingRight={'30px'}>
               <Link href={'https://pay.fondy.eu/merchants/47cc944cb10cd2872ee4b444ddf6517b39759ba8/default/index.html?button=f3f9c938be5627925f49191fe4627f9b06234ba8'} target={"_blank"}>
                 Donate
               </Link>
@@ -110,7 +59,7 @@ const PageHeading = () => {
 
 const Navigation = () => (
   <Flex
-    fontSize={'54px'}
+    fontSize={['64px', '54px']}
     // minWidth={'60%'}
     // justify
   >
@@ -138,17 +87,16 @@ const Navigation = () => (
 )
 
 const IndexPage = () => (
-  <ChakraProvider theme={theme}>
   <Layout>
 
       <PageHeading />
 
     <Box
       paddingTop={'90px'}
-      fontSize={'64px'}
+      fontSize={{base: '48px', lg: '64px'}}
     >
 
-      <Heading as='h1' fontSize='140px'>
+      <Heading as='h1' fontSize={{base: '120px', lg: '140px'}}>
         Building Toloka Camp
       </Heading>
       <Navigation />
@@ -169,29 +117,29 @@ const IndexPage = () => (
       <Box as={'section'} id={'dates'} paddingBottom={'150px'}>
         <Box paddingBottom={'60px'}>
         <a href={'#dates'}>
-          <Heading as={'h2'} fontSize={'140px'}>
+          <Heading as={'h2'} fontSize={{base: '120px', lg: '140px'}}>
             Dates
           </Heading>
         </a>
         </Box>
-        <Box fontSize={'140px'} textAlign={'right'} fontWeight={'bold'}>
+        <Box fontSize={{base: '48px', lg: '140px'}} textAlign={'right'} fontWeight={'bold'}>
           10.07.2023 - 10.10.2023
         </Box>
       </Box>
       <Box as={'section'} id={'goals'} paddingBottom={'150px'}>
         <Box paddingBottom={'60px'}>
         <a href={'#goals'}>
-          <Heading as={'h2'} fontSize={'140px'}>
+          <Heading as={'h2'} fontSize={{base: '120px', lg: '140px'}}>
             Goals
           </Heading>
         </a>
         </Box>
-      <Box fontSize={'64px'}>
+      <Box fontSize={{base: '48px', lg: '64px'}}>
         <Grid as={'ol'}
               gap={'30px'}
-              templateRows='repeat(2, 1fr)'
-              templateColumns='repeat(2, 1fr)'
-              autoFlow={'column'}
+              templateRows={['repeat(2, 1fr)', 'repeat(1, 1fr)']}
+              templateColumns={['repeat(2, 1fr)', 'repeat(1, 1fr)']}
+              autoFlow={['column', 'row']}
         >
           <Box as={'li'}>
             <Box as={'p'} paddingLeft={'72px'}>
@@ -217,11 +165,11 @@ const IndexPage = () => (
       </Box>
       </Box>
       <Box as={'section'} id={'activities'} paddingBottom={'150px'}>
-        <Flex>
+        <Flex flexWrap={'wrap'}>
           <Box marginRight={'60px'} flexBasis={'50%'}>
             <Box paddingBottom={'60px'}>
             <a href={'#activities'}>
-              <Heading as={'h2'} fontSize={'140px'}>
+              <Heading as={'h2'} fontSize={{base: '120px', lg: '140px'}}>
                 Activities
               </Heading>
             </a>
@@ -245,11 +193,13 @@ const IndexPage = () => (
               </li>
             </UnorderedList>
           </Box>
-          <Box flexBasis={'50%'}>
+          <Box flexBasis={'45%'}>
+            <Show above={'lg'}>
             <StaticImage
               src={'../images/activities.jpg'}
               alt={'A person working in building on a repair together event'}
             />
+            </Show>
 
             <Box paddingTop={'160px'}>
               <Button as={Link} colorScheme={'white'} style={{textDecoration: 'none'}} width={'100%'} href={'%'}>
@@ -272,7 +222,6 @@ const IndexPage = () => (
     </Box>
 
   </Layout>
-  </ChakraProvider>
 )
 
 /**

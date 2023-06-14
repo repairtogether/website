@@ -10,7 +10,55 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
-import { Box } from '@chakra-ui/react'
+import { Box, ChakraProvider, defineStyle, defineStyleConfig, extendTheme } from '@chakra-ui/react'
+import { mode } from '@chakra-ui/theme-tools'
+
+
+const theme = extendTheme({
+  fonts: {
+    heading: `'Neue Montreal'`,
+    body: `'Neue Montreal'`,
+  },
+  config: {
+    initialColorMode: 'dark',
+    // useSystemColorMode: false,
+  },
+  colors: {
+    // backgroundColor: '#0C0C0C'
+    // brand: {
+    //   100: "#f7fafc",
+    //   // ...
+    //   900: "#1a202c",
+    // },
+  },
+  styles: {
+    global: props => ({
+      body: {
+        bg: mode('white', '#0c0c0c')(props)
+      }
+    })
+  },
+  components: {
+    Button:  defineStyleConfig({
+      sizes: {
+        md: defineStyle({
+          fontSize: '76px',
+          fontWeight: 'normal',
+          borderRadius: '16px'
+        })
+
+
+      },
+      variants: {
+        solid: {
+          textTransform: 'uppercase',
+          bgColor: 'white',
+          height: '164px'
+        }
+      }
+    })
+  }
+})
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,7 +72,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <ChakraProvider theme={theme}>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <Box
         fontFamily={'Neue Montreal'}
@@ -41,7 +89,7 @@ const Layout = ({ children }) => {
         >
         </footer>
       </Box>
-    </>
+    </ChakraProvider>
   )
 }
 
