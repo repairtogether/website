@@ -45,7 +45,7 @@ const PageHeading = () => {
               </Link>
             </Box>
             <Box>
-              <Link href={'#'}>
+              <Link href={'http://t.me/repair_together_bot'} target={"_blank"}>
                 Join camp
               </Link>
             </Box>
@@ -62,7 +62,7 @@ const Navigation = () => (
     fontSize={{base: '54px', '2xl': '64px'}}
   >
     <Box paddingRight={'60px'}>
-      <Link href={'#main'}>
+      <Link href={'#long-description'}>
         All info
       </Link>
     </Box>
@@ -107,10 +107,18 @@ const IndexPage = () => (
         />
       </Box>
 
-      <Box paddingTop={'60px'} paddingBottom={'150px'}>
+      <Box paddingTop={'60px'} paddingBottom={'150px'} id={'long-description'}>
+        <p>
         Summer Cultural Camp for Housing Reconstruction for the Residents of Ivanivska Community, Chernihiv Oblast, Affected by the Russian War and Occupation.
+        </p>
 
-        The Russia’s war has caused immense suffering and destruction to Ukrainians, and for the recovery and further development of Ukraine, solidarity and unity of society are necessary. This can only be achieved
+        <p>
+        The Russia’s war has caused immense suffering and destruction to Ukrainians, and for the recovery and further development of Ukraine, solidarity and unity of society are necessary. This can only be achieved through the involvement of all segments of the population and assistance from developed countries. As the experience of many countries shows, the best way to achieve this is through collective work centered around an active cultural program.
+        </p>
+
+        <p>
+          We organize a permanent camp for the construction of 15 houses and reconstruction of a cultural center in the villages of Ivanivska Community, Chernihiv Oblast. The construction will be carried out by volunteers under the supervision and guidance of professional builders.
+        </p>
       </Box>
       <Box as={'section'} id={'dates'} paddingBottom={'150px'}>
         <Box paddingBottom={'60px'}>
@@ -200,7 +208,7 @@ const IndexPage = () => (
             </Show>
 
             <Box paddingTop={'160px'}>
-              <Button as={Link} colorScheme={'white'} style={{textDecoration: 'none'}} width={'100%'} href={'%'}>
+              <Button as={Link} colorScheme={'white'} style={{textDecoration: 'none'}} width={'100%'} href={'http://t.me/repair_together_bot'}>
                 join our camp
               </Button>
               <Box paddingTop={'90px'}>
@@ -209,7 +217,7 @@ const IndexPage = () => (
                 </Button>
               </Box>
               <Box paddingTop={'90px'}>
-                <Button as={Link} colorScheme={'white'} style={{textDecoration: 'none'}} width={'100%'} href={'%'}>
+                <Button as={Link} colorScheme={'white'} style={{textDecoration: 'none'}} width={'100%'} href={'https://www.instagram.com/repair.together/'} target={"_blank"}>
                   follow us
                 </Button>
               </Box>
