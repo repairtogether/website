@@ -29,7 +29,7 @@ const PageHeading = () => {
         }}
       >
         <Flex
-          fontSize={{base: '54px', '2xl': '64px'}}
+          fontSize={{ base: '23px', lg: '54px', '2xl': '64px'}}
           width={'100%'}
         >
           <Box
@@ -59,25 +59,27 @@ const PageHeading = () => {
 
 const Navigation = () => (
   <Flex
-    fontSize={{base: '54px', '2xl': '64px'}}
+    fontSize={{ base: '23px', lg: '54px', '2xl': '64px'}}
   >
     <Box paddingRight={'60px'}>
-      <Link href={'#long-description'}>
+      <Box>
+      <Link href={'#long-description'} _hover={{textShadow:"0px 0px 1px white", textDecoration: 'underline'}}>
         All info
       </Link>
+      </Box>
     </Box>
     <Box paddingRight={'60px'}>
-      <Link href={'#dates'}>
+      <Link href={'#dates'} _hover={{textShadow:"0px 0px 1px white", textDecoration: 'underline'}}>
         Dates
       </Link>
     </Box>
     <Box paddingRight={'60px'}>
-      <Link href={'#goals'}>
+      <Link href={'#goals'} _hover={{textShadow:"0px 0px 1px white", textDecoration: 'underline'}}>
         Goals
       </Link>
     </Box>
     <Box>
-      <Link href={'#activities'}>
+      <Link href={'#activities'} _hover={{textShadow:"0px 0px 1px white", textDecoration: 'underline'}}>
         Activities
       </Link>
     </Box>
@@ -90,24 +92,27 @@ const IndexPage = () => (
       <PageHeading />
 
     <Box
-      paddingTop={'90px'}
-      fontSize={{base: '48px', '2xl': '64px'}}
+      paddingTop={ { base: '32px', lg: '60px'}}
+      fontSize={{ base: '23px', lg: '48px', '2xl': '64px'}}
     >
 
-      <Heading as='h1' fontSize={{base: '120px', '2xl': '140px'}}>
+      <Heading as='h1' fontSize={{base:'48px', lg: '120px', '2xl': '140px'}}>
         Building Toloka Camp
       </Heading>
       <Navigation />
 
 
-      <Box paddingTop={'120px'}>
+      <Box paddingTop={['32px', null, null, '120px']}>
         <StaticImage
           src={'../images/cover.jpg'}
           alt={'Two people working in building on a repair together event'}
         />
       </Box>
 
-      <Box paddingTop={'60px'} paddingBottom={'150px'} id={'long-description'}>
+      <Box
+        paddingTop={[ '30px', null, null, '60px']}
+        paddingBottom={[ '30px', null, null, '150px']}
+        id={'long-description'}>
         <p>
         Summer Cultural Camp for Housing Reconstruction for the Residents of Ivanivska Community, Chernihiv Oblast, Affected by the Russian War and Occupation.
         </p>
@@ -120,27 +125,27 @@ const IndexPage = () => (
           We organize a permanent camp for the construction of 15 houses and reconstruction of a cultural center in the villages of Ivanivska Community, Chernihiv Oblast. The construction will be carried out by volunteers under the supervision and guidance of professional builders.
         </p>
       </Box>
-      <Box as={'section'} id={'dates'} paddingBottom={'150px'}>
-        <Box paddingBottom={'60px'}>
+      <Box as={'section'} id={'dates'} paddingBottom={['30px', null, null, '150px']}>
+        <Box paddingBottom={[ '24px', null, null, '60px']}>
         <a href={'#dates'}>
-          <Heading as={'h2'} fontSize={{base: '120px', '2xl': '140px'}}>
+          <Heading as={'h2'} fontSize={{ base:'48px', lg: '120px', '2xl': '140px'}}>
             Dates
           </Heading>
         </a>
         </Box>
-        <Box fontSize={{base: '48px', '2xl': '140px'}} textAlign={'right'} fontWeight={'bold'}>
+        <Box fontSize={{ base: '23px', lg: '48px', '2xl': '140px'}} textAlign={'right'} fontWeight={'bold'}>
           10.07.2023 - 10.10.2023
         </Box>
       </Box>
-      <Box as={'section'} id={'goals'} paddingBottom={'150px'}>
-        <Box paddingBottom={'60px'}>
+      <Box as={'section'} id={'goals'} paddingBottom={['30px', null, null, '150px']}>
+        <Box paddingBottom={[ '24px', null, null, '60px']}>
         <a href={'#goals'}>
-          <Heading as={'h2'} fontSize={{base: '120px', '2xl': '140px'}}>
+          <Heading as={'h2'} fontSize={{ base:'48px', lg: '120px', '2xl': '140px'}}>
             Goals
           </Heading>
         </a>
         </Box>
-      <Box fontSize={{base: '48px', '2xl': '64px'}}>
+      <Box>
         <Grid as={'ol'}
               gap={'30px'}
               templateRows={['repeat(2, 1fr)', 'repeat(1, 1fr)']}
@@ -170,18 +175,18 @@ const IndexPage = () => (
         </Grid>
       </Box>
       </Box>
-      <Box as={'section'} id={'activities'} paddingBottom={'150px'}>
+      <Box as={'section'} id={'activities'} paddingBottom={['30px', null, null, '150px']}>
         <Flex flexWrap={'wrap'}>
           <Box marginRight={'60px'} flexBasis={'50%'} flexGrow={'1'}>
-            <Box paddingBottom={'60px'}>
+            <Box paddingBottom={[ '24px', null, null, '60px']}>
             <a href={'#activities'}>
-              <Heading as={'h2'} fontSize={{base: '120px', '2xl': '140px'}}>
+              <Heading as={'h2'} fontSize={{ base:'48px', lg: '120px', '2xl': '140px'}}>
                 Activities
               </Heading>
             </a>
             </Box>
 
-            <UnorderedList stylePosition={'outside'} styleType={'circle'} spacing={'60px'}>
+            <UnorderedList stylePosition={'outside'} styleType={'circle'} spacing={[ '30px', null, null, '60px']}>
               <li>
                 Daily training in construction practices and hands-on experience in building.
               </li>
@@ -207,7 +212,7 @@ const IndexPage = () => (
             />
             </Show>
 
-            <Box paddingTop={'160px'}>
+            <Box paddingTop={[ '68px', null, null, '160px']}>
               <Button as={Link} colorScheme={'white'} style={{textDecoration: 'none'}} width={'100%'} href={'http://t.me/repair_together_bot'}>
                 join our camp
               </Button>

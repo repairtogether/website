@@ -162,9 +162,6 @@ dt,
 th {
   font-weight: bold;
 }
-li {
-  margin-bottom: calc(var(--space-4) / 2);
-}
 
 ol li:before {
   content: counter(step-counter) ".";

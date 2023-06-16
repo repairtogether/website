@@ -41,7 +41,17 @@ const theme = extendTheme({
   components: {
     Button:  defineStyleConfig({
       sizes: {
+        sm: defineStyle({
+          fontSize: '50px',
+          fontWeight: 'normal',
+          borderRadius: '16px'
+        }),
         md: defineStyle({
+          fontSize: '50px',
+          fontWeight: 'normal',
+          borderRadius: '16px'
+        }),
+        lg: defineStyle({
           fontSize: '76px',
           fontWeight: 'normal',
           borderRadius: '16px'
@@ -76,9 +86,9 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <Box
         fontFamily={'Neue Montreal'}
-        marginLeft={'60px'}
-        marginRight={'60px'}
-        paddingTop={'30px'}
+        marginLeft={[ '30px', null, null, '60px']}
+        marginRight={[ '30px', null, null, '60px']}
+        paddingTop={[ '0', null, null, '30px']}
       >
         <main id={'main'}>{children}</main>
         <footer
