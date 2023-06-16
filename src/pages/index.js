@@ -150,9 +150,10 @@ const IndexPage = () => (
       <Box>
         <Grid as={'ol'}
               gap={'30px'}
-              templateRows={['repeat(2, 1fr)', 'repeat(1, 1fr)']}
-              templateColumns={['repeat(2, 1fr)', 'repeat(1, 1fr)']}
-              autoFlow={['column', 'row']}
+
+              templateRows={['repeat(1, 1fr)', null, null, 'repeat(2, 1fr)']}
+              templateColumns={['repeat(1, 1fr)', null, null, 'repeat(2, 1fr)']}
+              autoFlow={['row', null, null, 'column']}
         >
           <Box as={'li'}>
             <Box as={'p'} paddingLeft={'72px'}>
