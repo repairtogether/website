@@ -156,22 +156,22 @@ const IndexPage = () => (
               autoFlow={['row', null, null, 'column']}
         >
           <Box as={'li'}>
-            <Box as={'p'} paddingLeft={'72px'}>
+            <Box as={'p'} paddingLeft={['32px', null, null, '72px']}>
               Engage at least 960 volunteers in the construction process. Minimum of 70 volunteers at any given moment.
             </Box>
           </Box>
           <Box as={'li'}>
-            <Box as={'p'} paddingLeft={'72px'}>
+            <Box as={'p'} paddingLeft={['32px', null, null, '72px']}>
             Conduct at least 36 unifying cultural events to strengthen connections and build a civil society.
             </Box>
           </Box>
           <Box as={'li'}>
-            <Box as={'p'} paddingLeft={'72px'}>
+            <Box as={'p'} paddingLeft={['32px', null, null, '72px']}>
             Construct a minimum of 20 houses for the most affected families and reconstruct a local Cultural Center.
             </Box>
           </Box>
           <Box as={'li'}>
-            <Box as={'p'} paddingLeft={'72px'}>
+            <Box as={'p'} paddingLeft={['32px', null, null, '72px']}>
             Reuse as many materials as possible in construction from the cleanup of destroyed houses.
             </Box>
           </Box>
