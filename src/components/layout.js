@@ -44,17 +44,20 @@ const theme = extendTheme({
         sm: defineStyle({
           fontSize: '50px',
           fontWeight: 'normal',
-          borderRadius: '16px'
+          borderRadius: '16px',
+          height: '74px'
         }),
         md: defineStyle({
           fontSize: '50px',
           fontWeight: 'normal',
-          borderRadius: '16px'
+          borderRadius: '16px',
+          height: '164px'
         }),
         lg: defineStyle({
           fontSize: '76px',
           fontWeight: 'normal',
-          borderRadius: '16px'
+          borderRadius: '16px',
+          height: '164px'
         })
 
 

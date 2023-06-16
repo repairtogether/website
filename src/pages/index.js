@@ -3,7 +3,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import {
-  Box, Button,
+  Box, Button, Center,
   Flex,
   Grid,
   Heading,
@@ -102,12 +102,14 @@ const IndexPage = () => (
       <Navigation />
 
 
-      <Box paddingTop={['32px', null, null, '120px']}>
-        <StaticImage
-          src={'../images/cover.jpg'}
-          alt={'Two people working in building on a repair together event'}
-        />
-      </Box>
+      <Center>
+        <Box paddingTop={['32px', null, null, '120px']} maxWidth={'1780px'}>
+          <StaticImage
+            src={'../images/cover.jpg'}
+            alt={'Two people working in building on a repair together event'}
+          />
+        </Box>
+      </Center>
 
       <Box
         paddingTop={[ '30px', null, null, '60px']}
@@ -213,16 +215,16 @@ const IndexPage = () => (
             </Show>
 
             <Box paddingTop={[ '68px', null, null, '160px']}>
-              <Button as={Link} colorScheme={'white'} style={{textDecoration: 'none'}} width={'100%'} href={'http://t.me/repair_together_bot'}>
+              <Button as={Link} colorScheme={'white'} style={{textDecoration: 'none'}} width={'100%'} href={'http://t.me/repair_together_bot'} size={['sm', null, null, 'lg']}>
                 join our camp
               </Button>
-              <Box paddingTop={'90px'}>
-                <Button as={Link} colorScheme={'white'} style={{textDecoration: 'none'}} width={'100%'} href={'https://pay.fondy.eu/merchants/47cc944cb10cd2872ee4b444ddf6517b39759ba8/default/index.html?button=f3f9c938be5627925f49191fe4627f9b06234ba8'} target={'_blank'}>
+              <Box paddingTop={[ '30px', null, null, '90px']}>
+                <Button as={Link} colorScheme={'white'} style={{textDecoration: 'none'}} width={'100%'} href={'https://pay.fondy.eu/merchants/47cc944cb10cd2872ee4b444ddf6517b39759ba8/default/index.html?button=f3f9c938be5627925f49191fe4627f9b06234ba8'} target={'_blank'} size={['sm', null, null, 'lg']}>
                   donate
                 </Button>
               </Box>
-              <Box paddingTop={'90px'}>
-                <Button as={Link} colorScheme={'white'} style={{textDecoration: 'none'}} width={'100%'} href={'https://www.instagram.com/repair.together/'} target={"_blank"}>
+              <Box paddingTop={[ '30px', null, null, '90px']}>
+                <Button as={Link} colorScheme={'white'} style={{textDecoration: 'none'}} width={'100%'} href={'https://www.instagram.com/repair.together/'} target={"_blank"} size={['sm', null, null, 'lg']}>
                   follow us
                 </Button>
               </Box>
