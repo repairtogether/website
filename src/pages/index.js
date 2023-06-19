@@ -62,7 +62,7 @@ const Navigation = () => (
     fontSize={{ base: '23px', lg: '54px', '2xl': '64px'}}
   >
     <Box>
-      <Box flexShrink='0' whiteSpace='no-wrap'>
+      <Box flexShrink='0' whiteSpace='nowrap'>
       <Link href={'#long-description'} _hover={{textShadow:"0px 0px 1px white", textDecoration: 'underline'}}>
         All info
       </Link>
