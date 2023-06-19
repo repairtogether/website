@@ -61,23 +61,38 @@ const Navigation = () => (
   <Flex
     fontSize={{ base: '23px', lg: '54px', '2xl': '64px'}}
   >
-    <Box paddingRight={'60px'}>
-      <Box>
+    <Box>
+      <Box flexShrink='0' whiteSpace='no-wrap'>
       <Link href={'#long-description'} _hover={{textShadow:"0px 0px 1px white", textDecoration: 'underline'}}>
         All info
       </Link>
       </Box>
     </Box>
-    <Box paddingRight={'60px'}>
+    <Box
+      minWidth='12px'
+      flexBasis='60px'
+      flexShrink='1'
+    />
+    <Box>
       <Link href={'#dates'} _hover={{textShadow:"0px 0px 1px white", textDecoration: 'underline'}}>
         Dates
       </Link>
     </Box>
-    <Box paddingRight={'60px'}>
+    <Box
+          minWidth='12px'
+          flexBasis='60px'
+          flexShrink='1'
+        />
+    <Box>
       <Link href={'#goals'} _hover={{textShadow:"0px 0px 1px white", textDecoration: 'underline'}}>
         Goals
       </Link>
     </Box>
+    <Box
+          minWidth='12px'
+          flexBasis='60px'
+          flexShrink='1'
+        />
     <Box>
       <Link href={'#activities'} _hover={{textShadow:"0px 0px 1px white", textDecoration: 'underline'}}>
         Activities
