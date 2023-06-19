@@ -37,14 +37,14 @@ const PageHeading = () => {
           >
             repair.together
           </Box>
-          <Spacer />
-          <Flex flexWrap={'wrap'} paddingLeft={'20px'}>
-            <Box paddingRight={'30px'}>
+          <Spacer minWidth='20px' />
+          <Flex flexWrap={'wrap'} justifyContent='flex-end'>
+            <Box>
               <Link href={'https://pay.fondy.eu/merchants/47cc944cb10cd2872ee4b444ddf6517b39759ba8/default/index.html?button=f3f9c938be5627925f49191fe4627f9b06234ba8'} target={"_blank"}>
                 Donate
               </Link>
             </Box>
-            <Box>
+            <Box paddingLeft='30px' textAlign='right'>
               <Link href={'http://t.me/repair_together_bot'} target={"_blank"}>
                 Join camp
               </Link>
