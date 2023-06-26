@@ -16,3 +16,16 @@ exports.createPages = async ({ actions }) => {
     defer: true,
   })
 }
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: /\.po$/,
+          use: 'react-localized-loader'
+        }
+      ]
+    }
+  })
+}

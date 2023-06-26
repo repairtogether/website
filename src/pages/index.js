@@ -11,6 +11,11 @@ import {
   Spacer,
   UnorderedList, useColorModeValue
 } from '@chakra-ui/react'
+import { LocalizedProvider } from 'react-localized'
+import { useLocales } from 'react-localized'
+import uk from '../locales/uk'
+
+const locales = { uk }
 
 const PageHeading = () => {
   const bgColor=  useColorModeValue('white', '#0c0c0c')
@@ -57,14 +62,18 @@ const PageHeading = () => {
   )
 }
 
-const Navigation = () => (
+const Navigation = () => {
+  const { gettext } = useLocales()
+
+
+return (
   <Flex
     fontSize={{ base: '23px', lg: '54px', '2xl': '64px'}}
   >
     <Box>
       <Box flexShrink='0' whiteSpace='nowrap'>
       <Link href={'#long-description'} _hover={{textShadow:"0px 0px 1px white", textDecoration: 'underline'}}>
-        All info
+        {gettext('All info')}
       </Link>
       </Box>
     </Box>
@@ -98,10 +107,13 @@ const Navigation = () => (
         Activities
       </Link>
     </Box>
-  </Flex>
-)
+  </Flex>)
+}
 
-const IndexPage = () => (
+const PageWithLocale = () => {
+  const { gettext } = useLocales()
+
+return (
   <Layout>
 
       <PageHeading />
@@ -112,7 +124,7 @@ const IndexPage = () => (
     >
 
       <Heading as='h1' fontSize={{base:'48px', lg: '120px', '2xl': '140px'}}>
-        Building Toloka Camp
+        {gettext('Building Toloka Camp')}
       </Heading>
       <Navigation />
 
@@ -251,7 +263,22 @@ const IndexPage = () => (
     </Box>
 
   </Layout>
+)}
+
+const IndexPage = () => {
+return (
+<LocalizedProvider
+  locales={locales}
+    selected="uk"
+>
+{
+  () => (
+    <PageWithLocale />
+  )
+}
+</LocalizedProvider>
 )
+}
 
 /**
  * Head export to define metadata for the page

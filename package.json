@@ -17,11 +17,14 @@
     "gatsby-source-filesystem": "^5.10.0",
     "gatsby-transformer-sharp": "^5.10.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-localized": "^3.2.1",
+    "react-localized-loader": "^1.1.1"
   },
   "devDependencies": {
     "gh-pages": "^5.0.0",
-    "prettier": "^2.8.8"
+    "prettier": "^2.8.8",
+    "react-localized-extractor": "^2.1.1"
   },
   "keywords": [
     "gatsby"
