@@ -1,3 +1,4 @@
+import "react-image-gallery/styles/css/image-gallery.css"
 import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
@@ -14,8 +15,25 @@ import {
 import { LocalizedProvider } from 'react-localized'
 import { useLocales } from 'react-localized'
 import uk from '../locales/uk'
+import { getSrc } from "gatsby-plugin-image"
+import ImageGallery from 'react-image-gallery'
 
 const locales = { uk }
+
+
+const images = [
+  {
+    original: '/photos/4O1A1710.png',
+    originalAlt: '' // TODO
+  },{
+    original: '/photos/_MG_3151.png'
+  },
+  {original: '/photos/_MG_4061 1.png'},
+  {original: '/photos/_MG_5019.png'},
+  {original: '/photos/_MG_8585 1.png'},
+  {original: '/photos/_MG_8924-Enhanced-NR.png'},
+  {original: '/photos/toloka -150.png'},
+];
 
 const PageHeading = () => {
   const bgColor=  useColorModeValue('white', '#0c0c0c')
@@ -131,10 +149,13 @@ return (
 
       <Center>
         <Box paddingTop={['32px', null, null, '120px']} maxWidth={'1780px'}>
-          <StaticImage
-            src={'../images/cover.jpg'}
-            alt={'Two people working in building on a repair together event'}
-          />
+            <ImageGallery
+                items={images}
+                showNav={true}
+                showPlayButton={false}
+                showBullets
+                showFullscreenButton={false}
+            />
         </Box>
       </Center>
 
@@ -269,7 +290,7 @@ const IndexPage = () => {
 return (
 <LocalizedProvider
   locales={locales}
-    selected="uk"
+    selected="en"
 >
 {
   () => (

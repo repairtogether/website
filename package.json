@@ -18,6 +18,7 @@
     "gatsby-transformer-sharp": "^5.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-image-gallery": "^1.2.12",
     "react-localized": "^3.2.1",
     "react-localized-loader": "^1.1.1"
   },
