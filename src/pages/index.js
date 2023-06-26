@@ -26,12 +26,12 @@ const images = [
     original: '/photos/4O1A1710.png',
     originalAlt: '' // TODO
   },{
-    original: '/photos/_MG_3151.png'
+    original: '/photos/MG-3151.png'
   },
-  {original: '/photos/_MG_4061 1.png'},
-  {original: '/photos/_MG_5019.png'},
-  {original: '/photos/_MG_8585 1.png'},
-  {original: '/photos/_MG_8924-Enhanced-NR.png'},
+  {original: '/photos/MG-4061 1.png'},
+  {original: '/photos/MG-5019.png'},
+  {original: '/photos/MG-8585 1.png'},
+  {original: '/photos/MG-8924-Enhanced-NR.png'},
   {original: '/photos/toloka -150.png'},
 ];
 
