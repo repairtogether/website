@@ -28,7 +28,7 @@ const images = [
     }, {
         original: '/photos/MG-3151.png'
     },
-    {original: '/photos/MG-4061 1.png'},
+    {original: '/photos/MG-4061-1.png'},
     {original: '/photos/MG-5019.png'},
     {original: '/photos/MG-8585 1.png'},
     {original: '/photos/MG-8924-Enhanced-NR.png'},
