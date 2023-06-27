@@ -253,7 +253,7 @@ const PageWithLocale = () => {
                         >
                             <Box as={'li'}>
                                 <Box as={'p'} paddingLeft={['32px', null, null, '72px']}>
-                                    Engage at least 960 volunteers in the construction process. Minimum of 70 volunteers
+                                    Engage at least 800 volunteers in the construction process. Minimum of 36 volunteers
                                     at any given moment.
                                 </Box>
                             </Box>
@@ -265,7 +265,7 @@ const PageWithLocale = () => {
                             </Box>
                             <Box as={'li'}>
                                 <Box as={'p'} paddingLeft={['32px', null, null, '72px']}>
-                                    Construct a minimum of 20 houses for the most affected families and reconstruct a
+                                    Construct a minimum of 9 houses (up to 20) for the most affected families and reconstruct a
                                     local Cultural Center.
                                 </Box>
                             </Box>
