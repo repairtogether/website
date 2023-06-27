@@ -1,10 +1,134 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=utf-8\n"
-"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 "
-">= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
 "Language: uk\n"
+"X-Crowdin-Project: repair-together-website\n"
+"X-Crowdin-Project-ID: 597905\n"
+"X-Crowdin-Language: uk\n"
+"X-Crowdin-File: en.po\n"
+"X-Crowdin-File-ID: 125\n"
+"Project-Id-Version: repair-together-website\n"
+"Language-Team: Ukrainian\n"
+"PO-Revision-Date: 2023-06-27 14:54\n"
 
-#: pages/index.js:72
+#: src/pages/index.js:358
+msgid "A person working in building on a repair together event"
+msgstr ""
+
+#: src/pages/index.js:152
+#: src/pages/index.js:328
+msgid "Activities"
+msgstr "Дозвілля"
+
+#: src/pages/index.js:121
 msgid "All info"
-msgstr "все інфо"
+msgstr "Про Табір"
+
+#: src/pages/index.js:243
+#: src/pages/index.js:414
+msgid "Building Toloka Camp"
+msgstr "Інтернаціональний Будівельний Табір"
+
+#: src/pages/index.js:302
+msgid "Conduct at least 36 unifying cultural events to strengthen connections and build a\n"
+"                                    civil society."
+msgstr "Провести принаймні 36 об'єднуючих культурних заходів для зміцнення зв'язків громадянського суспільства."
+
+#: src/pages/index.js:308
+msgid "Construct a minimum of 9 houses (up to 20) for the most affected families and\n"
+"                                    reconstruct a\n"
+"                                    local Cultural Center."
+msgstr "Побудувати мінімум 9 (до 20) будинків для постраждалих родин та реконструювати місцевий Будинок Культури."
+
+#: src/pages/index.js:339
+msgid "Cultural workshops for camp participants and local residents (electronic music,\n"
+"                                    painting, pottery, etc.) - twice a week."
+msgstr "Культурні майстер-класи для учасників табору та місцевих мешканців (електронна музика, живопис, гончарство тощо) - двічі на тиждень."
+
+#: src/pages/index.js:336
+msgid "Daily training in construction practices and hands-on experience in building."
+msgstr "Щоденне навчання будівельної практики та практичний досвід у будівництві."
+
+#: src/pages/index.js:132
+#: src/pages/index.js:270
+msgid "Dates"
+msgstr "Дати"
+
+#: src/pages/index.js:372
+msgid "donate"
+msgstr "Донать"
+
+#: src/pages/index.js:83
+msgid "Donate"
+msgstr "Донать"
+
+#: src/pages/index.js:296
+msgid "Engage at least 800 volunteers in the construction process. Minimum of 36 volunteers\n"
+"                                    at any given moment."
+msgstr "Залучити принаймні 800 волонтерів до будівельного процесу. Мінімум 36 волонтерів в будь-який момент."
+
+#: src/pages/index.js:379
+msgid "follow us"
+msgstr "Слідкуй та розповсюджуй"
+
+#: src/pages/index.js:142
+#: src/pages/index.js:282
+msgid "Goals"
+msgstr "Цілі"
+
+#: src/pages/index.js:365
+msgid "join our camp"
+msgstr "Приєднуйся до Кемпу"
+
+#: src/pages/index.js:98
+msgid "Join us"
+msgstr "Приєднуйся"
+
+#: src/pages/index.js:347
+msgid "Joint movie screenings - once a week."
+msgstr "Спільні покази фільмів - раз на тиждень."
+
+#: src/pages/index.js:171
+msgid "Read all info"
+msgstr "Дізнатися більше"
+
+#: src/pages/index.js:315
+msgid "Reuse as many materials as possible in construction from the cleanup of destroyed\n"
+"                                    houses."
+msgstr "Використати якомога більше матеріалів у будівництві, отриманих після прибирання зруйнованих будинків."
+
+#: src/pages/index.js:350
+msgid "Shared excursions every two weeks."
+msgstr "Спільні екскурсії кожні два тижні."
+
+#: src/pages/index.js:220
+msgid "Summer Cultural Camp for Housing Reconstruction for the Residents of Ivanivska Community, Chernihiv\n"
+"                Oblast, Affected by the Russian War and Occupation."
+msgstr "Літній Культурний Табір з реконструкції житла для мешканців Іванівської громади, Чернігівської області, постраждалих від російської війни та окупації."
+
+#: src/pages/index.js:164
+msgid "The Russia’s war has caused immense suffering and destruction to Ukrainians, and for the recovery and\n"
+"                further\n"
+"                development of Ukraine, solidarity and"
+msgstr "Російська війна спричинила велике страждання та руйнування для українців, а для відновлення та подальшого розвитку України необхідна солідарність та єдність суспільства. Цього можна досягти лише за умови залучення всіх верств населення та допомоги розвинених країн. Як показує досвід багатьох країн, найкращим способом досягнення цього є колективна робота, зосереджена навколо активної культурної програми"
+
+#: src/pages/index.js:184
+msgid "The Russia’s war has caused immense suffering and destruction to Ukrainians, and for the recovery and\n"
+"                further development of Ukraine, solidarity and unity of society are necessary. This can only be achieved\n"
+"                through the involvement of all segments of the population and assistance from developed countries. As\n"
+"                the experience of many countries shows, the best way to achieve this is through collective work centered\n"
+"                around an active cultural }program."
+msgstr "Російська війна спричинила велике страждання та руйнування для українців, а для відновлення та подальшого розвитку України необхідна солідарність та єдність суспільства. Цього можна досягти лише за умови залучення всіх верств населення та допомоги розвинених країн. Як показує досвід багатьох країн, найкращим способом досягнення цього є колективна робота, зосереджена навколо активної культурної програми."
+
+#: src/pages/index.js:192
+msgid "We organize a permanent camp for the construction of 15 houses and reconstruction of a cultural center\n"
+"                in the villages of Ivanivska Community, Chernihiv Oblast. The construction will be carried out by\n"
+"                volunteers under the supervision and guidance of professional builders."
+msgstr "Ми організовуємо постійний табір з будівництва 15 будинків та реконструкції Будинку Культури в селах Іванівської громади, Чернігівської області. Будівництво буде здійснюватися волонтерами під наглядом та керівництвом професійних будівельників."
+
+#: src/pages/index.js:343
+msgid "Weekly concerts of contemporary electronic music, bringing together camp\n"
+"                                    participants and cleanup volunteers - every weekend."
+msgstr "Щотижневі концерти сучасної електронної музики, які об'єднують учасників табору та волонтерів з прибирання."
+

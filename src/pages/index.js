@@ -37,8 +37,53 @@ const images = [
     {original: '/photos/toloka -150.png'},
 ];
 
-const PageHeading = () => {
-    const {gettext} = useLocales()
+const LocaleButton = ({setLanguage}) => {
+    const {locale} = useLocales()
+
+    if (locale === 'en') {
+        return (
+            <Button
+                padding={['0', '12px']}
+                size={'sm'}
+                variant={'ghost'}
+                onClick={ () => {
+                    setLanguage('uk')
+                }}
+                height={['20px', null, '40px']}
+
+                background={'none'}
+            >
+                <Box as={'img'}
+                     height={['20px', null, '40px']}
+                    src={'/ukr.png'}
+                     marginBottom={'0'}
+                />
+            </Button>
+        )
+    }
+
+    return (
+        <Button
+            padding={['0', '12px']}
+            size={'sm'}
+            variant={'ghost'}
+            onClick={ () => {
+                setLanguage('en')
+            }}
+            height={['20px', null, '40px']}
+            background={'none'}
+        >
+            <Box as={'img'}
+                 height={['20px', null, '40px']}
+                src={'/eng.png'}
+                 marginBottom={'0'}
+            />
+        </Button>
+    )
+}
+
+const PageHeading = ({setLanguage}) => {
+    const {gettext, locale} = useLocales()
     const bgColor = useColorModeValue('white', '#0c0c0c')
 
     return (
@@ -55,8 +100,9 @@ const PageHeading = () => {
                     }}
                 >
                     <Flex
-                        fontSize={{base: '18px', md: '23px', lg: '54px', '2xl': '64px'}}
+                        fontSize={{base: (locale === 'uk' ? '14px' : '18px'), md: '23px', lg: (locale === 'uk' ? '36px' : '54px'), '2xl': '64px'}}
                         width={'100%'}
+                        alignItems={'center'}
                     >
                         <Box
                             fontWeight={'600'}
@@ -65,7 +111,7 @@ const PageHeading = () => {
                         </Box>
                         <Spacer/>
                         <Flex flexWrap={'wrap'} justifyContent='flex-end'
-                              fontSize={{base: '18px', lg: '54px', '2xl': '64px'}}>
+                              fontSize={{base: (locale === 'uk' ? '16px' : '18px'), lg: '54px', '2xl': '64px'}}>
                             <Box>
                                 <Button
                                     as={Link}
@@ -88,7 +134,7 @@ const PageHeading = () => {
                                         colorScheme={'white'} size='sm'
                                         colorScheme={'white'}
                                         height={['20px', null, '40px', '80px']}
-                                        fontSize={{base: '18px', lg: '54px', '2xl': '64px'}}
+                                        fontSize={{base: (locale === 'uk' ? '16px' : '18px'), lg: '54px', '2xl': '64px'}}
                                         borderRadius={['2px', '4px']}
                                         textTransform='none'
                                         _hover={{
@@ -97,6 +143,9 @@ const PageHeading = () => {
                                 >
                                     {gettext('Join us')}
                                 </Button>
+                            </Box>
+                            <Box>
+                                <LocaleButton setLanguage={setLanguage} />
                             </Box>
                         </Flex>
                     </Flex>
@@ -165,7 +214,7 @@ const CollapsedState = ({onClick}) => {
                 further
                 development of Ukraine, solidarity and`)}
             </Box>
-            <Box textAlign={'right'} paddingRight={'40px'} marginTop={'-40px'}>
+            <Box textAlign={'right'} paddingRight={'40px'} marginTop={'-20px'}>
                 <Button variant={'link'} leftIcon={<ChevronDownIcon/>} fontSize={['23px', null, null, '54px']}
                         onClick={onClick}>
                     {gettext('Read all info')}
@@ -204,10 +253,10 @@ const SwitchState = () => {
     if (collapsed) {
         return <CollapsedState onClick={() => {
             setCollapsed(false)
-        }} />
+        }}/>
     }
 
-    return <ExpandedState />
+    return <ExpandedState/>
 }
 
 const Description = () => {
@@ -220,26 +269,26 @@ const Description = () => {
                 {gettext(`Summer Cultural Camp for Housing Reconstruction for the Residents of Ivanivska Community, Chernihiv
                 Oblast, Affected by the Russian War and Occupation.`)}
             </p>
-            <SwitchState />
+            <SwitchState/>
 
         </>
     )
 }
 
-const PageWithLocale = () => {
-    const {gettext} = useLocales()
+const PageWithLocale = ({setLanguage}) => {
+    const {gettext, locale} = useLocales()
 
     return (
         <Layout>
 
-            <PageHeading/>
+            <PageHeading setLanguage={setLanguage}/>
 
             <Box
                 paddingTop={{base: '32px', lg: '60px'}}
                 fontSize={{base: '23px', lg: '48px', '2xl': '64px'}}
             >
 
-                <Heading as='h1' fontSize={{base: '48px', lg: '120px', '2xl': '140px'}}>
+                <Heading as='h1' fontSize={{base: (locale === 'uk' ? '28px' : '48px'), lg: (locale === 'uk' ? '76px' : '120px'), '2xl': '140px'}}>
                     {gettext('Building Toloka Camp')}
                 </Heading>
                 <Navigation/>
@@ -361,21 +410,52 @@ const PageWithLocale = () => {
 
                             <Box paddingTop={['68px', null, null, '160px']}>
                                 <Button as={Link} colorScheme={'white'} style={{textDecoration: 'none'}} width={'100%'}
-                                        href={'http://t.me/repair_together_bot'} size={['sm', null, null, 'lg']}>
+                                        href={'http://t.me/repair_together_bot'}
+                                fontSize={{
+
+                                        base: (locale === 'uk' ? '20px' : '42px'),
+                                    lg: '76px'
+
+                                }}
+                                        height={['74px', null, null, '164px']}
+                                        borderRadius={'16px'}
+
+                                >
                                     {gettext('join our camp')}
                                 </Button>
                                 <Box paddingTop={['30px', null, null, '90px']}>
                                     <Button as={Link} colorScheme={'white'} style={{textDecoration: 'none'}}
                                             width={'100%'}
                                             href={'https://pay.fondy.eu/merchants/47cc944cb10cd2872ee4b444ddf6517b39759ba8/default/index.html?button=f3f9c938be5627925f49191fe4627f9b06234ba8'}
-                                            target={'_blank'} size={['sm', null, null, 'lg']}>
+                                            target={'_blank'}
+
+                                            fontSize={{
+
+                                                base: (locale === 'uk' ? '20px' : '42px'),
+                                                lg: '76px'
+
+                                            }}
+                                            height={['74px', null, null, '164px']}
+                                            borderRadius={'16px'}
+
+                                    >
                                         {gettext('donate')}
                                     </Button>
                                 </Box>
                                 <Box paddingTop={['30px', null, null, '90px']}>
                                     <Button as={Link} colorScheme={'white'} style={{textDecoration: 'none'}}
                                             width={'100%'} href={'https://www.instagram.com/repair.together/'}
-                                            target={"_blank"} size={['sm', null, null, 'lg']}>
+                                            target={"_blank"}
+                                            fontSize={{
+
+                                                base: (locale === 'uk' ? '20px' : '42px'),
+                                                lg: '76px'
+
+                                            }}
+                                            height={['74px', null, null, '164px']}
+                                            borderRadius={'16px'}
+                                            fontWeight={'normal'}
+                                    >
                                         {gettext('follow us')}
                                     </Button>
                                 </Box>
@@ -399,7 +479,7 @@ const IndexPage = () => {
         >
             {
                 () => (
-                    <PageWithLocale/>
+                    <PageWithLocale setLanguage={setLanguage}/>
                 )
             }
         </LocalizedProvider>

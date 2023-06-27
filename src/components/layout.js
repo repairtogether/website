@@ -16,8 +16,8 @@ import { mode } from '@chakra-ui/theme-tools'
 
 const theme = extendTheme({
   fonts: {
-    heading: `'Neue Montreal'`,
-    body: `'Neue Montreal'`,
+    heading: `'Neue Montreal; TT Commons'`,
+    body: `'Neue Montreal; TT Commons'`,
   },
   config: {
     initialColorMode: 'dark',
@@ -88,7 +88,7 @@ const Layout = ({ children }) => {
     <ChakraProvider theme={theme}>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <Box
-        fontFamily={'Neue Montreal'}
+        fontFamily={'Neue Montreal; TT Commons'}
         marginLeft={[ '20px', '30px', null, '60px']}
         marginRight={[ '20px', '30px', null, '60px']}
         paddingTop={[ '0', null, null, '30px']}
