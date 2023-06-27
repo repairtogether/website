@@ -89,8 +89,8 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <Box
         fontFamily={'Neue Montreal'}
-        marginLeft={[ '30px', null, null, '60px']}
-        marginRight={[ '30px', null, null, '60px']}
+        marginLeft={[ '20px', '30px', null, '60px']}
+        marginRight={[ '20px', '30px', null, '60px']}
         paddingTop={[ '0', null, null, '30px']}
       >
         <main id={'main'}>{children}</main>
