@@ -1,5 +1,6 @@
 import "react-image-gallery/styles/css/image-gallery.css"
 import * as React from "react"
+import {useState} from "react"
 import {StaticImage} from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -15,8 +16,9 @@ import {
 import {LocalizedProvider} from 'react-localized'
 import {useLocales} from 'react-localized'
 import uk from '../locales/uk'
-import {getSrc} from "gatsby-plugin-image"
 import ImageGallery from 'react-image-gallery'
+
+import {ChevronDownIcon} from '@chakra-ui/icons'
 
 const locales = {uk}
 
@@ -152,12 +154,51 @@ const Navigation = () => {
         </Flex>)
 }
 
-const CollapsedState = () => (
-    <p>
-        The Russia’s war has caused immense suffering and destruction to Ukrainians, and for the recovery and further
-        development of Ukraine, solidarity and
-    </p>
+const CollapsedState = ({onClick}) => (
+    <>
+        <Box as={'p'} opacity={'0.24'}>
+            The Russia’s war has caused immense suffering and destruction to Ukrainians, and for the recovery and
+            further
+            development of Ukraine, solidarity and
+        </Box>
+        <Box textAlign={'right'} paddingRight={'40px'} marginTop={'-40px'}>
+            <Button variant={'link'} leftIcon={<ChevronDownIcon/>} fontSize={['23px', null, null, '54px']} onClick={onClick}>
+                Read all info
+            </Button>
+        </Box>
+    </>
 )
+
+const ExpandedState = () => (
+    <>
+        <p>
+            The Russia’s war has caused immense suffering and destruction to Ukrainians, and for the recovery and
+            further development of Ukraine, solidarity and unity of society are necessary. This can only be achieved
+            through the involvement of all segments of the population and assistance from developed countries. As
+            the experience of many countries shows, the best way to achieve this is through collective work centered
+            around an active cultural program.
+        </p>
+
+        <p>
+            We organize a permanent camp for the construction of 15 houses and reconstruction of a cultural center
+            in the villages of Ivanivska Community, Chernihiv Oblast. The construction will be carried out by
+            volunteers under the supervision and guidance of professional builders.
+        </p>
+
+    </>
+)
+
+const SwitchState = () => {
+    const [collapsed, setCollapsed] = useState(true)
+
+    if (collapsed) {
+        return <CollapsedState onClick={() => {
+            setCollapsed(false)
+        }} />
+    }
+
+    return <ExpandedState />
+}
 
 const Description = () => {
     return (
@@ -167,20 +208,7 @@ const Description = () => {
                 Summer Cultural Camp for Housing Reconstruction for the Residents of Ivanivska Community, Chernihiv
                 Oblast, Affected by the Russian War and Occupation.
             </p>
-
-            <p>
-                The Russia’s war has caused immense suffering and destruction to Ukrainians, and for the recovery and
-                further development of Ukraine, solidarity and unity of society are necessary. This can only be achieved
-                through the involvement of all segments of the population and assistance from developed countries. As
-                the experience of many countries shows, the best way to achieve this is through collective work centered
-                around an active cultural program.
-            </p>
-
-            <p>
-                We organize a permanent camp for the construction of 15 houses and reconstruction of a cultural center
-                in the villages of Ivanivska Community, Chernihiv Oblast. The construction will be carried out by
-                volunteers under the supervision and guidance of professional builders.
-            </p>
+            <SwitchState />
 
         </>
     )
@@ -246,7 +274,7 @@ const PageWithLocale = () => {
                     <Box>
                         <Grid as={'ol'}
                               gap={'30px'}
-
+                              marginLeft={'0'}
                               templateRows={['repeat(1, 1fr)', null, null, 'repeat(2, 1fr)']}
                               templateColumns={['repeat(1, 1fr)', null, null, 'repeat(2, 1fr)']}
                               autoFlow={['row', null, null, 'column']}
@@ -265,7 +293,8 @@ const PageWithLocale = () => {
                             </Box>
                             <Box as={'li'}>
                                 <Box as={'p'} paddingLeft={['32px', null, null, '72px']}>
-                                    Construct a minimum of 9 houses (up to 20) for the most affected families and reconstruct a
+                                    Construct a minimum of 9 houses (up to 20) for the most affected families and
+                                    reconstruct a
                                     local Cultural Center.
                                 </Box>
                             </Box>
