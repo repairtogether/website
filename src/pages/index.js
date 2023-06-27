@@ -38,6 +38,7 @@ const images = [
 ];
 
 const PageHeading = () => {
+    const {gettext} = useLocales()
     const bgColor = useColorModeValue('white', '#0c0c0c')
 
     return (
@@ -79,7 +80,7 @@ const PageHeading = () => {
                                         textDecoration: 'none'
                                     }}
                                 >
-                                    Donate
+                                    {gettext('Donate')}
                                 </Button>
                             </Box>
                             <Box paddingLeft={['8px', null, '30px']} textAlign='right'>
@@ -94,7 +95,7 @@ const PageHeading = () => {
                                             textDecoration: 'none'
                                         }}
                                 >
-                                    Join us
+                                    {gettext('Join us')}
                                 </Button>
                             </Box>
                         </Flex>
@@ -128,7 +129,7 @@ const Navigation = () => {
             />
             <Box>
                 <Link href={'#dates'} _hover={{textShadow: "0px 0px 1px white", textDecoration: 'underline'}}>
-                    Dates
+                    {gettext('Dates')}
                 </Link>
             </Box>
             <Box
@@ -138,7 +139,7 @@ const Navigation = () => {
             />
             <Box>
                 <Link href={'#goals'} _hover={{textShadow: "0px 0px 1px white", textDecoration: 'underline'}}>
-                    Goals
+                    {gettext('Goals')}
                 </Link>
             </Box>
             <Box
@@ -148,45 +149,54 @@ const Navigation = () => {
             />
             <Box>
                 <Link href={'#activities'} _hover={{textShadow: "0px 0px 1px white", textDecoration: 'underline'}}>
-                    Activities
+                    {gettext('Activities')}
                 </Link>
             </Box>
         </Flex>)
 }
 
-const CollapsedState = ({onClick}) => (
-    <>
-        <Box as={'p'} opacity={'0.24'}>
-            The Russia’s war has caused immense suffering and destruction to Ukrainians, and for the recovery and
-            further
-            development of Ukraine, solidarity and
-        </Box>
-        <Box textAlign={'right'} paddingRight={'40px'} marginTop={'-40px'}>
-            <Button variant={'link'} leftIcon={<ChevronDownIcon/>} fontSize={['23px', null, null, '54px']} onClick={onClick}>
-                Read all info
-            </Button>
-        </Box>
-    </>
-)
+const CollapsedState = ({onClick}) => {
+    const {gettext} = useLocales()
 
-const ExpandedState = () => (
-    <>
-        <p>
-            The Russia’s war has caused immense suffering and destruction to Ukrainians, and for the recovery and
-            further development of Ukraine, solidarity and unity of society are necessary. This can only be achieved
-            through the involvement of all segments of the population and assistance from developed countries. As
-            the experience of many countries shows, the best way to achieve this is through collective work centered
-            around an active cultural program.
-        </p>
+    return (
+        <>
+            <Box as={'p'} opacity={'0.24'}>
+                {gettext(`The Russia’s war has caused immense suffering and destruction to Ukrainians, and for the recovery and
+                further
+                development of Ukraine, solidarity and`)}
+            </Box>
+            <Box textAlign={'right'} paddingRight={'40px'} marginTop={'-40px'}>
+                <Button variant={'link'} leftIcon={<ChevronDownIcon/>} fontSize={['23px', null, null, '54px']}
+                        onClick={onClick}>
+                    {gettext('Read all info')}
+                </Button>
+            </Box>
+        </>
+    );
+}
 
-        <p>
-            We organize a permanent camp for the construction of 15 houses and reconstruction of a cultural center
-            in the villages of Ivanivska Community, Chernihiv Oblast. The construction will be carried out by
-            volunteers under the supervision and guidance of professional builders.
-        </p>
+const ExpandedState = () => {
+    const {gettext} = useLocales()
 
-    </>
-)
+    return (
+        <>
+            <p>
+                {gettext(`The Russia’s war has caused immense suffering and destruction to Ukrainians, and for the recovery and
+                further development of Ukraine, solidarity and unity of society are necessary. This can only be achieved
+                through the involvement of all segments of the population and assistance from developed countries. As
+                the experience of many countries shows, the best way to achieve this is through collective work centered
+                around an active cultural }program.`)}
+            </p>
+
+            <p>
+                {gettext(`We organize a permanent camp for the construction of 15 houses and reconstruction of a cultural center
+                in the villages of Ivanivska Community, Chernihiv Oblast. The construction will be carried out by
+                volunteers under the supervision and guidance of professional builders.`)}
+            </p>
+
+        </>
+    );
+}
 
 const SwitchState = () => {
     const [collapsed, setCollapsed] = useState(true)
@@ -201,12 +211,14 @@ const SwitchState = () => {
 }
 
 const Description = () => {
+    const {gettext} = useLocales()
+
     return (
         <>
 
             <p>
-                Summer Cultural Camp for Housing Reconstruction for the Residents of Ivanivska Community, Chernihiv
-                Oblast, Affected by the Russian War and Occupation.
+                {gettext(`Summer Cultural Camp for Housing Reconstruction for the Residents of Ivanivska Community, Chernihiv
+                Oblast, Affected by the Russian War and Occupation.`)}
             </p>
             <SwitchState />
 
@@ -255,7 +267,7 @@ const PageWithLocale = () => {
                     <Box paddingBottom={['24px', null, null, '60px']}>
                         <a href={'#dates'}>
                             <Heading as={'h2'} fontSize={{base: '48px', lg: '120px', '2xl': '140px'}}>
-                                Dates
+                                {gettext('Dates')}
                             </Heading>
                         </a>
                     </Box>
@@ -267,7 +279,7 @@ const PageWithLocale = () => {
                     <Box paddingBottom={['24px', null, null, '60px']}>
                         <a href={'#goals'}>
                             <Heading as={'h2'} fontSize={{base: '48px', lg: '120px', '2xl': '140px'}}>
-                                Goals
+                                {gettext('Goals')}
                             </Heading>
                         </a>
                     </Box>
@@ -281,27 +293,27 @@ const PageWithLocale = () => {
                         >
                             <Box as={'li'}>
                                 <Box as={'p'} paddingLeft={['32px', null, null, '72px']}>
-                                    Engage at least 800 volunteers in the construction process. Minimum of 36 volunteers
-                                    at any given moment.
+                                    {gettext(`Engage at least 800 volunteers in the construction process. Minimum of 36 volunteers
+                                    at any given moment.`)}
                                 </Box>
                             </Box>
                             <Box as={'li'}>
                                 <Box as={'p'} paddingLeft={['32px', null, null, '72px']}>
-                                    Conduct at least 36 unifying cultural events to strengthen connections and build a
-                                    civil society.
+                                    {gettext(`Conduct at least 36 unifying cultural events to strengthen connections and build a
+                                    civil society.`)}
                                 </Box>
                             </Box>
                             <Box as={'li'}>
                                 <Box as={'p'} paddingLeft={['32px', null, null, '72px']}>
-                                    Construct a minimum of 9 houses (up to 20) for the most affected families and
+                                    {gettext(`Construct a minimum of 9 houses (up to 20) for the most affected families and
                                     reconstruct a
-                                    local Cultural Center.
+                                    local Cultural Center.`)}
                                 </Box>
                             </Box>
                             <Box as={'li'}>
                                 <Box as={'p'} paddingLeft={['32px', null, null, '72px']}>
-                                    Reuse as many materials as possible in construction from the cleanup of destroyed
-                                    houses.
+                                    {gettext(`Reuse as many materials as possible in construction from the cleanup of destroyed
+                                    houses.`)}
                                 </Box>
                             </Box>
                         </Grid>
@@ -313,7 +325,7 @@ const PageWithLocale = () => {
                             <Box paddingBottom={['24px', null, null, '60px']}>
                                 <a href={'#activities'}>
                                     <Heading as={'h2'} fontSize={{base: '48px', lg: '120px', '2xl': '140px'}}>
-                                        Activities
+                                        {gettext('Activities')}
                                     </Heading>
                                 </a>
                             </Box>
@@ -321,21 +333,21 @@ const PageWithLocale = () => {
                             <UnorderedList stylePosition={'outside'} styleType={'circle'}
                                            spacing={['30px', null, null, '60px']}>
                                 <li>
-                                    Daily training in construction practices and hands-on experience in building.
+                                    {gettext('Daily training in construction practices and hands-on experience in building.')}
                                 </li>
                                 <li>
-                                    Cultural workshops for camp participants and local residents (electronic music,
-                                    painting, pottery, etc.) - twice a week.
+                                    {gettext(`Cultural workshops for camp participants and local residents (electronic music,
+                                    painting, pottery, etc.) - twice a week.`)}
                                 </li>
                                 <li>
-                                    Weekly concerts of contemporary electronic music, bringing together camp
-                                    participants and cleanup volunteers - every weekend.
+                                    {gettext(`Weekly concerts of contemporary electronic music, bringing together camp
+                                    participants and cleanup volunteers - every weekend.`)}
                                 </li>
                                 <li>
-                                    Joint movie screenings - once a week.
+                                    {gettext('Joint movie screenings - once a week.')}
                                 </li>
                                 <li>
-                                    Shared excursions every two weeks.
+                                    {gettext('Shared excursions every two weeks.')}
                                 </li>
                             </UnorderedList>
                         </Box>
@@ -343,28 +355,28 @@ const PageWithLocale = () => {
                             <Show above={'xl'}>
                                 <StaticImage
                                     src={'../images/activities.jpg'}
-                                    alt={'A person working in building on a repair together event'}
+                                    alt={gettext('A person working in building on a repair together event')}
                                 />
                             </Show>
 
                             <Box paddingTop={['68px', null, null, '160px']}>
                                 <Button as={Link} colorScheme={'white'} style={{textDecoration: 'none'}} width={'100%'}
                                         href={'http://t.me/repair_together_bot'} size={['sm', null, null, 'lg']}>
-                                    join our camp
+                                    {gettext('join our camp')}
                                 </Button>
                                 <Box paddingTop={['30px', null, null, '90px']}>
                                     <Button as={Link} colorScheme={'white'} style={{textDecoration: 'none'}}
                                             width={'100%'}
                                             href={'https://pay.fondy.eu/merchants/47cc944cb10cd2872ee4b444ddf6517b39759ba8/default/index.html?button=f3f9c938be5627925f49191fe4627f9b06234ba8'}
                                             target={'_blank'} size={['sm', null, null, 'lg']}>
-                                        donate
+                                        {gettext('donate')}
                                     </Button>
                                 </Box>
                                 <Box paddingTop={['30px', null, null, '90px']}>
                                     <Button as={Link} colorScheme={'white'} style={{textDecoration: 'none'}}
                                             width={'100%'} href={'https://www.instagram.com/repair.together/'}
                                             target={"_blank"} size={['sm', null, null, 'lg']}>
-                                        follow us
+                                        {gettext('follow us')}
                                     </Button>
                                 </Box>
                             </Box>
@@ -381,7 +393,7 @@ const IndexPage = () => {
     return (
         <LocalizedProvider
             locales={locales}
-            selected="en"
+            selected="uk"
         >
             {
                 () => (
@@ -397,6 +409,9 @@ const IndexPage = () => {
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="Building Toloka Camp"/>
+export const Head = () => {
+    const {gettext} = useLocales()
+    return <Seo title={gettext("Building Toloka Camp")}/>
+}
 
 export default IndexPage
