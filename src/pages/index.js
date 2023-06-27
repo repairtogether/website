@@ -390,10 +390,12 @@ const PageWithLocale = () => {
 }
 
 const IndexPage = () => {
+    const [language, setLanguage] = useState('en')
+
     return (
         <LocalizedProvider
             locales={locales}
-            selected="uk"
+            selected={language}
         >
             {
                 () => (
@@ -410,8 +412,8 @@ const IndexPage = () => {
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
 export const Head = () => {
-    const {gettext} = useLocales()
-    return <Seo title={gettext("Building Toloka Camp")}/>
+    // const {gettext} = useLocales()
+    return <Seo title={"Building Toloka Camp"}/>
 }
 
 export default IndexPage
