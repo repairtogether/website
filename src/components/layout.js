@@ -42,7 +42,7 @@ const theme = extendTheme({
     Button:  defineStyleConfig({
       sizes: {
         sm: defineStyle({
-          fontSize: '50px',
+          fontSize: '42px',
           fontWeight: 'normal',
           borderRadius: '16px',
           height: '74px'
