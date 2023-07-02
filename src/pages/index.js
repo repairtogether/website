@@ -430,8 +430,8 @@ const PageWithLocale = ({setLanguage}) => {
                                         href={'http://t.me/repair_together_bot'}
                                         fontSize={{
 
-                                            base: (locale === 'uk' ? '20px' : '42px'),
-                                            lg: '76px'
+                                            base: (locale === 'uk' ? '20px' : '32px'),
+                                            lg: '54px'
 
                                         }}
                                         height={['74px', null, null, '164px']}
@@ -448,8 +448,8 @@ const PageWithLocale = ({setLanguage}) => {
 
                                             fontSize={{
 
-                                                base: (locale === 'uk' ? '20px' : '42px'),
-                                                lg: '76px'
+                                                base: (locale === 'uk' ? '20px' : '32px'),
+                                                lg: '54px'
 
                                             }}
                                             height={['74px', null, null, '164px']}
@@ -465,8 +465,8 @@ const PageWithLocale = ({setLanguage}) => {
                                             target={"_blank"}
                                             fontSize={{
 
-                                                base: (locale === 'uk' ? '20px' : '42px'),
-                                                lg: '76px'
+                                                base: (locale === 'uk' ? '20px' : '32px'),
+                                                lg: '54px'
 
                                             }}
                                             height={['74px', null, null, '164px']}
