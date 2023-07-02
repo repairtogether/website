@@ -60,6 +60,31 @@
   --size-gutter: var(--space-5);
   --size-gap: var(--space-6);
 }
+
+@media only screen and (max-width: 768px)  {
+  html {
+    scroll-padding-top: 87px;
+  }
+}
+
+@media only screen and (min-width: 769px)  {
+  html {
+    scroll-padding-top: 100px;
+  }
+}
+
+@media only screen and (min-width: 992px)  {
+  html {
+    scroll-padding-top: 141px;
+  }
+}
+
+@media only screen and (min-width: 1416px)  {
+  html {
+    scroll-padding-top: 156px;
+  }
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
@@ -67,7 +92,6 @@ html {
   font-size: var(--font-md);
   line-height: var(--line-height-normal);
   overflow-y: scroll;
-  scroll-padding-top: 156px;
   scroll-behavior: smooth;
 }
 body {
