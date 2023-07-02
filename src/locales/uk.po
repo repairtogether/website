@@ -28,7 +28,7 @@ msgstr "Про Табір"
 #: src/pages/index.js:243
 #: src/pages/index.js:414
 msgid "Building Toloka Camp"
-msgstr "Інтернаціональний Будівельний Табір"
+msgstr "Інбут"
 
 #: src/pages/index.js:302
 msgid "Conduct at least 36 unifying cultural events to strengthen connections and build a\n"

@@ -46,7 +46,7 @@ const LocaleButton = ({setLanguage}) => {
                 padding={['0', '12px']}
                 size={'sm'}
                 variant={'ghost'}
-                onClick={ () => {
+                onClick={() => {
                     setLanguage('uk')
                 }}
                 height={['20px', null, '40px']}
@@ -55,7 +55,7 @@ const LocaleButton = ({setLanguage}) => {
             >
                 <Box as={'img'}
                      height={['20px', null, '40px']}
-                    src={'/ukr.png'}
+                     src={'/ukr.png'}
                      marginBottom={'0'}
                 />
             </Button>
@@ -67,7 +67,7 @@ const LocaleButton = ({setLanguage}) => {
             padding={['0', '12px']}
             size={'sm'}
             variant={'ghost'}
-            onClick={ () => {
+            onClick={() => {
                 setLanguage('en')
             }}
             height={['20px', null, '40px']}
@@ -75,7 +75,7 @@ const LocaleButton = ({setLanguage}) => {
         >
             <Box as={'img'}
                  height={['20px', null, '40px']}
-                src={'/eng.png'}
+                 src={'/eng.png'}
                  marginBottom={'0'}
             />
         </Button>
@@ -100,7 +100,12 @@ const PageHeading = ({setLanguage}) => {
                     }}
                 >
                     <Flex
-                        fontSize={{base: (locale === 'uk' ? '14px' : '18px'), md: '23px', lg: (locale === 'uk' ? '36px' : '54px'), '2xl': '64px'}}
+                        fontSize={{
+                            base: (locale === 'uk' ? '14px' : '18px'),
+                            md: '23px',
+                            lg: (locale === 'uk' ? '36px' : '54px'),
+                            '2xl': '64px'
+                        }}
                         width={'100%'}
                         alignItems={'center'}
                     >
@@ -112,7 +117,7 @@ const PageHeading = ({setLanguage}) => {
                         <Spacer/>
                         <Flex flexWrap={'wrap'} justifyContent='flex-end'
                               fontSize={{base: (locale === 'uk' ? '16px' : '18px'), lg: '54px', '2xl': '64px'}}>
-                            <Box>
+                            <Box display={'flex'}>
                                 <Button
                                     as={Link}
                                     href={'https://pay.fondy.eu/merchants/47cc944cb10cd2872ee4b444ddf6517b39759ba8/default/index.html?button=f3f9c938be5627925f49191fe4627f9b06234ba8'}
@@ -129,12 +134,20 @@ const PageHeading = ({setLanguage}) => {
                                     {gettext('Donate')}
                                 </Button>
                             </Box>
-                            <Box paddingLeft={['8px', null, '30px']} textAlign='right'>
+                            <Box
+                                paddingLeft={['8px', null, '30px']}
+                                textAlign='right'
+                                display={'flex'}
+                            >
                                 <Button as={Link} href={'http://t.me/repair_together_bot'} target={"_blank"}
                                         colorScheme={'white'} size='sm'
                                         colorScheme={'white'}
                                         height={['20px', null, '40px', '80px']}
-                                        fontSize={{base: (locale === 'uk' ? '16px' : '18px'), lg: '54px', '2xl': '64px'}}
+                                        fontSize={{
+                                            base: (locale === 'uk' ? '16px' : '18px'),
+                                            lg: '54px',
+                                            '2xl': '64px'
+                                        }}
                                         borderRadius={['2px', '4px']}
                                         textTransform='none'
                                         _hover={{
@@ -144,8 +157,8 @@ const PageHeading = ({setLanguage}) => {
                                     {gettext('Join us')}
                                 </Button>
                             </Box>
-                            <Box>
-                                <LocaleButton setLanguage={setLanguage} />
+                            <Box display={'flex'} alignItems='center'>
+                                <LocaleButton setLanguage={setLanguage}/>
                             </Box>
                         </Flex>
                     </Flex>
@@ -288,7 +301,11 @@ const PageWithLocale = ({setLanguage}) => {
                 fontSize={{base: '23px', lg: '48px', '2xl': '64px'}}
             >
 
-                <Heading as='h1' fontSize={{base: (locale === 'uk' ? '28px' : '48px'), lg: (locale === 'uk' ? '76px' : '120px'), '2xl': '140px'}}>
+                <Heading as='h1' fontSize={{
+                    base: '48px',
+                    lg: '120px',
+                    '2xl': '140px'
+                }}>
                     {gettext('Building Toloka Camp')}
                 </Heading>
                 <Navigation/>
@@ -411,12 +428,12 @@ const PageWithLocale = ({setLanguage}) => {
                             <Box paddingTop={['68px', null, null, '160px']}>
                                 <Button as={Link} colorScheme={'white'} style={{textDecoration: 'none'}} width={'100%'}
                                         href={'http://t.me/repair_together_bot'}
-                                fontSize={{
+                                        fontSize={{
 
-                                        base: (locale === 'uk' ? '20px' : '42px'),
-                                    lg: '76px'
+                                            base: (locale === 'uk' ? '20px' : '42px'),
+                                            lg: '76px'
 
-                                }}
+                                        }}
                                         height={['74px', null, null, '164px']}
                                         borderRadius={'16px'}
 
